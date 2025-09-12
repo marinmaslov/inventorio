@@ -1,6 +1,8 @@
 package com.inventorio.security.jwt;
 
 import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -8,26 +10,57 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "mysecretkey12345"; // zamijeni jakim tajnim ključem
+    private final String secretKey;
+
+    public JwtUtil(@Value("${jwt.secret}") String secretKey) {
+        this.secretKey = secretKey;
+    }
 
     public String generateToken(String username) {
-        return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10h
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
-                .compact();
+        try {
+            return Jwts.builder()
+                    .setSubject(username)
+                    .setIssuedAt(new Date(System.currentTimeMillis()))
+                    .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+                    .signWith(Keys.hmacShaKeyFor(secretKey.getBytes()), SignatureAlgorithm.HS256)
+                    .compact();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to generate token: " + e.getMessage(), e);
+        }
     }
 
     public String extractUsername(String token) {
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().getSubject();
+        try {
+            return Jwts.parser()
+                    .verifyWith(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload()
+                    .getSubject();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to extract username: " + e.getMessage(), e);
+        }
     }
 
     public boolean validateToken(String token, String username) {
-        return extractUsername(token).equals(username) && !isTokenExpired(token);
+        try {
+            return extractUsername(token).equals(username) && !isTokenExpired(token);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     private boolean isTokenExpired(String token) {
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody().getExpiration().before(new Date());
+        try {
+            Date expiration = Jwts.parser()
+                    .verifyWith(Keys.hmacShaKeyFor(secretKey.getBytes()))
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload()
+                    .getExpiration();
+            return expiration.before(new Date());
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to check token expiration: " + e.getMessage(), e);
+        }
     }
 }

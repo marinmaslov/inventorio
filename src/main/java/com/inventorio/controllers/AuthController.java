@@ -19,6 +19,10 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestParam String username) {
         // For testing purposes, username is accepted without requiring pwd
-        return jwtUtil.generateToken(username);
+        try {
+            return ResponseEntity.ok(service.list());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

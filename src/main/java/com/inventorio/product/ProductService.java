@@ -23,37 +23,57 @@ public class ProductService {
     }
 
     public Product create(Product product) {
-        BigDecimal fxRate = getUsdRate();
-        product.setPriceUsd(product.getPriceEur().multiply(fxRate));
-        return repo.save(product);
+        try {
+            BigDecimal fxRate = getUsdRate();
+            product.setPriceUsd(product.getPriceEur().multiply(fxRate));
+            return repo.save(product);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create product: " + e.getMessage(), e);
+        }
     }
 
     public Optional<Product> get(Long id) {
-        return repo.findById(id);
+        try {
+            return repo.findById(id);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch product: " + e.getMessage(), e);
+        }
     }
 
     public List<Product> list() {
-        return repo.findAll();
+        try {
+            return repo.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to list products: " + e.getMessage(), e);
+        }
     }
 
     private BigDecimal getUsdRate() {
-        String url = "https://api.hnb.hr/tecajn-eur/v3?valuta=USD";
-        ResponseEntity<List<Map<String, String>>> response =
-                restTemplate.exchange(url, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<Map<String, String>>>() {});
-
-        String rate = response.getBody().get(0).get("srednji_tecaj");
-        rate = rate.replace(",", ".");
-        return new BigDecimal(rate);
+        try {
+            String url = "https://api.hnb.hr/tecajn-eur/v3?valuta=USD";
+            ResponseEntity<List<Map<String, String>>> response =
+                    restTemplate.exchange(url, HttpMethod.GET, null,
+                            new ParameterizedTypeReference<List<Map<String, String>>>() {});
+            String rate = response.getBody().get(0).get("srednji_tecaj");
+            rate = rate.replace(",", ".");
+            return new BigDecimal(rate);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch USD rate: " + e.getMessage(), e);
+        }
     }
 
-    @Scheduled(cron = "0 0 2 * * *") // 2:00 in the morning
+    @Scheduled(cron = "0 0 2 * * *")
     public void updateUsdPrices() {
-        BigDecimal fxRate = getUsdRate();
-        List<Product> products = repo.findAll();
-        for (Product p : products) {
-            p.setPriceUsd(p.getPriceEur().multiply(fxRate));
+        try {
+            BigDecimal fxRate = getUsdRate();
+            List<Product> products = repo.findAll();
+            for (Product p : products) {
+                p.setPriceUsd(p.getPriceEur().multiply(fxRate));
+            }
+            repo.saveAll(products);
+        } catch (Exception e) {
+            // Log error, do not rethrow to avoid breaking scheduler
+            System.err.println("Failed to update USD prices: " + e.getMessage());
         }
-        repo.saveAll(products);
     }
 }

@@ -16,7 +16,8 @@
         <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
         <jakarta.validation.version>3.0.2</jakarta.validation.version>
         <junit.version>5.10.2</junit.version>
-        <jsonwebtoken.version>0.11.5</jsonwebtoken.version>
+        <jsonwebtoken.version>0.12.5</jsonwebtoken.version>
+        <jackson.version>2.17.1</jackson.version>
     </properties>
 
     <dependencies>
@@ -63,6 +64,27 @@
             <artifactId>jjwt-jackson</artifactId>
             <version>${jsonwebtoken.version}</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
