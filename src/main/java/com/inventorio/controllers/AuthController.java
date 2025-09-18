@@ -3,6 +3,7 @@ package com.inventorio.controllers;
 import com.inventorio.security.jwt.JwtUtil;
 import com.inventorio.user.User;
 import com.inventorio.user.UserRepository;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping(
+        value = "/auth",
+        consumes = MediaType.APPLICATION_JSON_VALUE,
+        produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthController {
 
     private final JwtUtil jwtUtil;
