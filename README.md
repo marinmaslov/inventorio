@@ -12,6 +12,7 @@ A Spring Boot REST API for user authentication and product management.
 
 ### Configuration
 
+## Way 1
 Set the following properties in `src/main/resources/application.properties`:
 
 ```
@@ -22,7 +23,52 @@ jwt.secret=your-very-long-secret-key-here
 spring.datasource.url=jdbc:postgresql://localhost:5432/inventorio
 spring.datasource.username=your_db_user
 spring.datasource.password=your_db_password
+
+# Server port configuration
+server.port=<port_number>
+
+# JWT Secret
+jwt.secret=<32B_alphanumerical_string>
+
+# Admin User Credentials
+admin.username=<admin_username>
+admin.password=<admin_password>
+
+# Logging
+logging.level.root=info
+logging.level.org.springframework=info
+logging.level.com.inventorio=info
+
+# If you wish to use HTTP2
+#server.ssl.key-store=classpath:<keystore_file>.p12
+#server.ssl.key-store-password=<keystore_password>
+#server.ssl.key-store-type=PKCS12
+#server.ssl.key-alias=<test_cert>
+#server.http2.enabled=true
+
+# Aiven PostgreSQL connection
+spring.datasource.url=<db_source_url>
+spring.datasource.username=<db_user>
+spring.datasource.password=<db_password>
+
+# JPA / Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+# Limit HikariCP
+spring.datasource.hikari.maximum-pool-size=2
+spring.datasource.hikari.minimum-idle=1
+
 ```
+
+## Way 2 (Easy Mode)
+Download the jar file from the latest [release](https://github.com/marinmaslov/inventorio/releases) and run it with:
+```sh
+java -jar inventorio-0.0.1-SNAPSHOT.jar --spring.config.location=path/to/application.properties
+```
+
+The application.properties file should contain the same properties as shown in Way 1.
 
 ### Build & Run
 
@@ -130,3 +176,11 @@ curl -X DELETE http://localhost:8089/api/products/1 \
   -H "Authorization: Bearer <ADMIN_JWT_TOKEN>" \
   -H "Content-Type: application/json"
 ```
+
+# IMPORTANT
+If issues occur when opening the project in INTELLIJ, please do the following:
+1. Go to `File` > `Project Structure` > `Project`.
+2. Ensure `Project SDK` is set to `JDK 17`.
+3. Go to `File` > `Settings` > `Build, Execution, Deployment` > `Compiler` > `Java Compiler` and set it to 17.
+4. Make sure `Project bytecode version` is set to 17.
+5. Rebuild your project.

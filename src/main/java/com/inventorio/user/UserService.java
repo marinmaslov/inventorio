@@ -17,6 +17,11 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    /**
+     * Login user and return JWT token if successful
+     * @param authRequest
+     * @return JWT token
+     */
     public String login(AuthRequest authRequest) {
         validateAuthRequest(authRequest);
         String username = authRequest.getUsername();
@@ -27,6 +32,10 @@ public class UserService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid credentials"));
     }
 
+    /**
+     * Register a new user
+     * @param authRequest
+     */
     public void register(AuthRequest authRequest) {
         validateAuthRequest(authRequest);
         String username = authRequest.getUsername();
@@ -41,6 +50,10 @@ public class UserService {
         userRepository.save(user);
     }
 
+    /** Simple validation for AuthRequest
+     * @param authRequest
+     * @throws IllegalArgumentException if validation fails
+     */
     private void validateAuthRequest(AuthRequest authRequest) {
         if (authRequest.getUsername() == null || authRequest.getUsername().isBlank()) {
             throw new IllegalArgumentException("Username must not be blank");

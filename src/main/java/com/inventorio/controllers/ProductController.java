@@ -59,7 +59,11 @@ public class ProductController {
         try {
             List<Product> products = service.list();
             logger.info("Fetching list of all products [items: {}]", products.size());
-            return ResponseEntity.ok(products.toString());
+            String response = products.stream()
+                    .map(Product::toString)
+                    .reduce((a, b) -> a + ",\n" + b)
+                    .orElse("");
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
             logger.error("Failed to get list of products", e);
             return ResponseEntity.badRequest().body(e.getMessage());
