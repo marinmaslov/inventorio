@@ -53,6 +53,13 @@ spring.datasource.hikari.maximum-pool-size=2
 spring.datasource.hikari.minimum-idle=1
 
 ```
+### IMPORTANT
+If issues occur while running the app from INTELLIJ, please do the following:
+1. Go to `File` > `Project Structure` > `Project`.
+2. Ensure `Project SDK` is set to `JDK 17`.
+3. Go to `File` > `Settings` > `Build, Execution, Deployment` > `Compiler` > `Java Compiler` and set it to 17.
+4. Make sure `Project bytecode version` is set to 17.
+5. Rebuild your project.
 
 ## Way 2 (Easy Mode)
 Download the jar file from the latest [release](https://github.com/marinmaslov/inventorio/releases) and run it with:
@@ -168,11 +175,3 @@ curl -X DELETE http://localhost:8089/api/products/1 \
   -H "Authorization: Bearer <ADMIN_JWT_TOKEN>" \
   -H "Content-Type: application/json"
 ```
-
-# IMPORTANT
-If issues occur when opening the project in INTELLIJ, please do the following:
-1. Go to `File` > `Project Structure` > `Project`.
-2. Ensure `Project SDK` is set to `JDK 17`.
-3. Go to `File` > `Settings` > `Build, Execution, Deployment` > `Compiler` > `Java Compiler` and set it to 17.
-4. Make sure `Project bytecode version` is set to 17.
-5. Rebuild your project.
