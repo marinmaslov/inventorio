@@ -33,19 +33,20 @@ class AuthControllerIntegrationTests {
     void testRegisterAndLogin() throws Exception {
         String username = "testuser";
         String password = "testpass";
+        String jsonBody = String.format("{\"username\":\"%s\",\"password\":\"%s\"}", username, password);
 
         // Register
         String registerResponse = mockMvc.perform(post("/auth/register")
-                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .content("username=" + username + "&password=" + password))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonBody))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
         assertThat(registerResponse).contains("registered successfully");
 
         // Login
         String token = mockMvc.perform(post("/auth/login")
-                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .content("username=" + username + "&password=" + password))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonBody))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
         assertThat(token.length()).isGreaterThan(10);

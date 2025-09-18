@@ -46,7 +46,7 @@ Response: Success or error message
 ```sh
 curl -X POST http://localhost:8089/auth/register \
   -H "Content-Type: application/json" \
-  -d "username=testuser&password=testpass"
+  -d '{"username":"testuser","password":"testpass"}'
 ```
 
 #### 1.2. Login with a user
@@ -60,7 +60,7 @@ Response: JWT token or error message
 ```sh
 curl -X POST http://localhost:8089/auth/login \
   -H "Content-Type: application/json" \
-  -d "username=testuser&password=testpass"
+  -d '{"username":"testuser","password":"testpass"}'
 ```
 
 ##### 1.2.1. Obtaining JWT Token
