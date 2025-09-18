@@ -4,6 +4,8 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -15,6 +17,7 @@ import java.io.IOException;
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
+    private static final Logger logger = LogManager.getLogger(JwtRequestFilter.class);
     private final JwtUtil jwtUtil;
 
     public JwtRequestFilter(JwtUtil jwtUtil) {
@@ -45,7 +48,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 }
             }
         } catch (Exception e) {
-            // Optionally log or set error response
+            logger.error("JWT filter error", e);
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid JWT token");
         }
 
         chain.doFilter(request, response);

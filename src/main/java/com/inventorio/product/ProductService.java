@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -43,6 +42,11 @@ public class ProductService {
         return repo.findAll();
     }
 
+    public void delete(Long id) {
+        logger.info("Deleting product with id: {}", id);
+        repo.deleteById(id);
+    }
+
     private BigDecimal getUsdRate() {
         try {
             String url = "https://api.hnb.hr/tecajn-eur/v3?valuta=USD";
@@ -67,8 +71,7 @@ public class ProductService {
             }
             repo.saveAll(products);
         } catch (Exception e) {
-            // Log error, do not rethrow to avoid breaking scheduler
-            System.err.println("Failed to update USD prices: " + e.getMessage());
+            logger.error("Failed to update USD prices", e);
         }
     }
 }

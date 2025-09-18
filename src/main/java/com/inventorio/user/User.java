@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,5 +18,5 @@ public class User {
     private String password; // hashed
 
     @Column(nullable = false)
-    private String role; // e.g. "ROLE_USER", "ROLE_ADMIN"
+    private String role;
 }

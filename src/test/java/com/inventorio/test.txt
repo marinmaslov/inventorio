@@ -1,0 +1,343 @@
+mvnw.cmd -Didea.version=2025.2.1 -Dmaven.ext.class.path=C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\plugins\maven\lib\maven-event-listener.jar -Djansi.passthrough=true -Dstyle.color=always -Dmaven.repo.local=C:\Users\Lea\.m2\repository test -f pom.xml
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com:inventorio:jar:0.0.1
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 146, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 155, column 21
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ---------------------------< com:inventorio >---------------------------
+[INFO] Building inventorio 0.0.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ inventorio ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.13.0:compile (default-compile) @ inventorio ---
+[INFO] Recompiling the module because of changed source code.
+[WARNING] File encoding has not been set, using platform encoding windows-1252, i.e. build is platform dependent!
+[INFO] Compiling 13 source files with javac [debug target 1.8] to target\classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO] /C:/Users/Lea/Desktop/git/inventorio/src/main/java/com/inventorio/security/jwt/JwtUtil.java: C:\Users\Lea\Desktop\git\inventorio\src\main\java\com\inventorio\security\jwt\JwtUtil.java uses or overrides a deprecated API.
+[INFO] /C:/Users/Lea/Desktop/git/inventorio/src/main/java/com/inventorio/security/jwt/JwtUtil.java: Recompile with -Xlint:deprecation for details.
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ inventorio ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Users\Lea\Desktop\git\inventorio\src\test\resources
+[INFO]
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ inventorio ---
+[INFO] Recompiling the module because of changed dependency.
+[WARNING] File encoding has not been set, using platform encoding windows-1252, i.e. build is platform dependent!
+[INFO] Compiling 3 source files with javac [debug target 1.8] to target\test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[INFO]
+[INFO] --- surefire:3.2.5:test (default-test) @ inventorio ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.inventorio.AuthControllerIntegrationTests
+2025-09-18T20:35:25.067675300Z main INFO Starting configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z]...
+2025-09-18T20:35:25.067675300Z main INFO Start watching for changes to C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml every 0 seconds
+2025-09-18T20:35:25.067675300Z main INFO Configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z] started.
+2025-09-18T20:35:25.067675300Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@33f676f6...
+2025-09-18T20:35:25.067675300Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@33f676f6 stopped.
+[2025-09-18 22:35:25] [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.inventorio.AuthControllerIntegrationTests]: AuthControllerIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2025-09-18 22:35:25] [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.inventorio.Inventorio for test class com.inventorio.AuthControllerIntegrationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.5)
+
+[2025-09-18 22:35:25] [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+[2025-09-18 22:35:25] [main] INFO  com.inventorio.AuthControllerIntegrationTests - Starting AuthControllerIntegrationTests using Java 17.0.12 with PID 428 (started by Lea in C:\Users\Lea\Desktop\git\inventorio)
+[2025-09-18 22:35:25] [main] INFO  com.inventorio.AuthControllerIntegrationTests - No active profile set, falling back to 1 default profile: "default"
+[2025-09-18 22:35:26] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-09-18 22:35:27] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+[2025-09-18 22:35:27] [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-09-18 22:35:27] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+[2025-09-18 22:35:27] [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-09-18 22:35:28] [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-09-18 22:35:28] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-09-18 22:35:29] [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71e7c13f
+[2025-09-18 22:35:29] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-09-18 22:35:29] [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-09-18 22:35:29] [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-09-18 22:35:30] [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-09-18 22:35:30] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-09-18 22:35:31] [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-09-18 22:35:31] [main] WARN  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration -
+
+Using generated security password: 165dea9a-7255-4797-aea6-dfb52403a5f3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-09-18 22:35:31] [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-09-18 22:35:32] [main] INFO  org.springframework.boot.test.mock.web.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[2025-09-18 22:35:32] [main] INFO  org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+[2025-09-18 22:35:32] [main] INFO  org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+[2025-09-18 22:35:32] [main] INFO  com.inventorio.AuthControllerIntegrationTests - Started AuthControllerIntegrationTests in 6.98 seconds (process running for 8.538)
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from users u1_0 where u1_0.username=?
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from users u1_0 where u1_0.username=?
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/register
+       Parameters = {username=[testuser], password=[testpass]}
+          Headers = [Content-Type:"application/x-www-form-urlencoded;charset=UTF-8", Content-Length:"35"]
+             Body = username=testuser&password=testpass
+    Session Attrs = {}
+
+Handler:
+             Type = com.inventorio.controllers.AuthController
+           Method = com.inventorio.controllers.AuthController#register(String, String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"text/plain;charset=UTF-8", Content-Length:"23", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = text/plain;charset=UTF-8
+             Body = Username already exists
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.011 s <<< FAILURE! -- in com.inventorio.AuthControllerIntegrationTests
+[ERROR] com.inventorio.AuthControllerIntegrationTests.testRegisterAndLogin -- Time elapsed: 0.672 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.inventorio.AuthControllerIntegrationTests.testRegisterAndLogin(AuthControllerIntegrationTests.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running com.inventorio.InventorioTests
+2025-09-18T20:35:35.437307800Z main INFO Starting configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z]...
+2025-09-18T20:35:35.437307800Z main INFO Start watching for changes to C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml every 0 seconds
+2025-09-18T20:35:35.437307800Z main INFO Configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z] started.
+2025-09-18T20:35:35.452929100Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@28194a50...
+2025-09-18T20:35:35.452929100Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@28194a50 stopped.
+[2025-09-18 22:35:35] [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.inventorio.InventorioTests]: InventorioTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2025-09-18 22:35:35] [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.inventorio.Inventorio for test class com.inventorio.InventorioTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.5)
+
+[2025-09-18 22:35:36] [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+[2025-09-18 22:35:36] [main] INFO  com.inventorio.InventorioTests - Starting InventorioTests using Java 17.0.12 with PID 14936 (started by Lea in C:\Users\Lea\Desktop\git\inventorio)
+[2025-09-18 22:35:36] [main] INFO  com.inventorio.InventorioTests - No active profile set, falling back to 1 default profile: "default"
+[2025-09-18 22:35:37] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-09-18 22:35:37] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+[2025-09-18 22:35:38] [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-09-18 22:35:38] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+[2025-09-18 22:35:38] [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-09-18 22:35:38] [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-09-18 22:35:38] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-09-18 22:35:39] [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65b73689
+[2025-09-18 22:35:39] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-09-18 22:35:39] [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-09-18 22:35:39] [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-09-18 22:35:40] [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-09-18 22:35:41] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-09-18 22:35:41] [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-09-18 22:35:41] [main] WARN  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration -
+
+Using generated security password: 404cfabb-8b9f-496a-8633-e678dd18fa0d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-09-18 22:35:41] [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-09-18 22:35:42] [main] INFO  com.inventorio.InventorioTests - Started InventorioTests in 6.751 seconds (process running for 8.493)
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from users u1_0 where u1_0.username=?
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.5)
+
+[2025-09-18 22:35:43] [main] INFO  com.inventorio.Inventorio - Starting Inventorio using Java 17.0.12 with PID 14936 (started by Lea in C:\Users\Lea\Desktop\git\inventorio)
+[2025-09-18 22:35:43] [main] INFO  com.inventorio.Inventorio - No active profile set, falling back to 1 default profile: "default"
+[2025-09-18 22:35:43] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-09-18 22:35:43] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+[2025-09-18 22:35:44] [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8089 (http)
+[2025-09-18 22:35:44] [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+[2025-09-18 22:35:44] [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[2025-09-18 22:35:44] [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.44]
+[2025-09-18 22:35:44] [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[2025-09-18 22:35:44] [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1090 ms
+[2025-09-18 22:35:44] [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-09-18 22:35:44] [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-09-18 22:35:44] [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-09-18 22:35:44] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[2025-09-18 22:35:45] [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@31b9108b
+[2025-09-18 22:35:45] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[2025-09-18 22:35:45] [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-09-18 22:35:45] [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-09-18 22:35:45] [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-09-18 22:35:45] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-09-18 22:35:45] [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-09-18 22:35:45] [main] WARN  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration -
+
+Using generated security password: 75e79a70-a3bb-453c-b971-4c939ddc328d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-09-18 22:35:45] [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-09-18 22:35:45] [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8089"]
+[2025-09-18 22:35:45] [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8089 (http) with context path '/'
+[2025-09-18 22:35:45] [main] INFO  com.inventorio.Inventorio - Started Inventorio in 2.336 seconds (process running for 11.555)
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from users u1_0 where u1_0.username=?
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.03 s -- in com.inventorio.InventorioTests
+[INFO] Running com.inventorio.ProductServiceIntegrationTests
+2025-09-18T20:35:48.384115800Z main INFO Starting configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z]...
+2025-09-18T20:35:48.387108500Z main INFO Start watching for changes to C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml every 0 seconds
+2025-09-18T20:35:48.387108500Z main INFO Configuration XmlConfiguration[location=C:\Users\Lea\Desktop\git\inventorio\target\classes\log4j2.xml, lastModified=2025-09-12T12:56:53.617Z] started.
+2025-09-18T20:35:48.390100400Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7f2cfe3f...
+2025-09-18T20:35:48.390100400Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7f2cfe3f stopped.
+[2025-09-18 22:35:48] [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.inventorio.ProductServiceIntegrationTests]: ProductServiceIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2025-09-18 22:35:48] [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.inventorio.Inventorio for test class com.inventorio.ProductServiceIntegrationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.5)
+
+[2025-09-18 22:35:49] [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+[2025-09-18 22:35:49] [main] INFO  com.inventorio.ProductServiceIntegrationTests - Starting ProductServiceIntegrationTests using Java 17.0.12 with PID 28416 (started by Lea in C:\Users\Lea\Desktop\git\inventorio)
+[2025-09-18 22:35:49] [main] INFO  com.inventorio.ProductServiceIntegrationTests - No active profile set, falling back to 1 default profile: "default"
+[2025-09-18 22:35:50] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-09-18 22:35:50] [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 2 JPA repository interfaces.
+[2025-09-18 22:35:51] [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-09-18 22:35:51] [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.26.Final
+[2025-09-18 22:35:51] [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[2025-09-18 22:35:51] [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-09-18 22:35:52] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[2025-09-18 22:35:52] [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46591e98
+[2025-09-18 22:35:52] [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[2025-09-18 22:35:52] [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2025-09-18 22:35:52] [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-09-18 22:35:54] [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-09-18 22:35:54] [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-09-18 22:35:54] [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-09-18 22:35:54] [main] WARN  org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration -
+
+Using generated security password: 584fadfa-4778-478c-97ff-8f57b6cd5307
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-09-18 22:35:54] [main] INFO  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-09-18 22:35:55] [main] INFO  com.inventorio.ProductServiceIntegrationTests - Started ProductServiceIntegrationTests in 6.992 seconds (process running for 8.63)
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from users u1_0 where u1_0.username=?
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[2025-09-18 22:35:56] [main] INFO  com.inventorio.product.ProductService - Fetching list of all products
+Hibernate: select p1_0.id,p1_0.code,p1_0.is_available,p1_0.name,p1_0.price_eur,p1_0.price_usd from product p1_0
+[2025-09-18 22:35:56] [main] INFO  com.inventorio.product.ProductService - Deleting product with id: 5
+Hibernate: select p1_0.id,p1_0.code,p1_0.is_available,p1_0.name,p1_0.price_eur,p1_0.price_usd from product p1_0 where p1_0.id=?
+Hibernate: delete from product where id=?
+[2025-09-18 22:35:56] [main] INFO  com.inventorio.product.ProductService - Fetching list of all products
+Hibernate: select p1_0.id,p1_0.code,p1_0.is_available,p1_0.name,p1_0.price_eur,p1_0.price_usd from product p1_0
+[2025-09-18 22:35:57] [main] INFO  com.inventorio.product.ProductService - Fetching list of all products
+Hibernate: select p1_0.id,p1_0.code,p1_0.is_available,p1_0.name,p1_0.price_eur,p1_0.price_usd from product p1_0
+[2025-09-18 22:35:57] [main] INFO  com.inventorio.product.ProductService - Creating product: Product(id=null, code=ABC123DEFG, name=Test Product, priceEur=10.00, priceUsd=11.81800000, isAvailable=true)
+Hibernate: insert into product (code,is_available,name,price_eur,price_usd) values (?,?,?,?,?)
+[2025-09-18 22:35:57] [main] INFO  com.inventorio.product.ProductService - Fetching product with id: 6
+Hibernate: select p1_0.id,p1_0.code,p1_0.is_available,p1_0.name,p1_0.price_eur,p1_0.price_usd from product p1_0 where p1_0.id=?
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.743 s -- in com.inventorio.ProductServiceIntegrationTests
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Failures:
+[ERROR]   AuthControllerIntegrationTests.testRegisterAndLogin:30 Status expected:<200> but was:<400>
+[INFO]
+[ERROR] Tests run: 6, Failures: 1, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  41.015 s
+[INFO] Finished at: 2025-09-18T22:35:58+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project inventorio: There are test failures.
+[ERROR]
+[ERROR] Please refer to C:\Users\Lea\Desktop\git\inventorio\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
