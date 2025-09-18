@@ -16,14 +16,6 @@ A Spring Boot REST API for user authentication and product management.
 Set the following properties in `src/main/resources/application.properties`:
 
 ```
-server.port=8089
-admin.username=admin
-admin.password=adminpwd123
-jwt.secret=your-very-long-secret-key-here
-spring.datasource.url=jdbc:postgresql://localhost:5432/inventorio
-spring.datasource.username=your_db_user
-spring.datasource.password=your_db_password
-
 # Server port configuration
 server.port=<port_number>
 
