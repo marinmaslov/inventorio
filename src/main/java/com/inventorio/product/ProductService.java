@@ -1,5 +1,7 @@
 package com.inventorio.product;
 
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.core.ParameterizedTypeReference;
@@ -13,6 +15,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ProductService {
@@ -20,12 +23,22 @@ public class ProductService {
     private static final Logger logger = LogManager.getLogger(ProductService.class);
     private final ProductRepository repo;
     private final RestTemplate restTemplate = new RestTemplate();
+    private final Validator validator;
 
-    public ProductService(ProductRepository repo) {
+    public ProductService(ProductRepository repo, Validator validator) {
         this.repo = repo;
+        this.validator = validator;
     }
 
     public Product create(Product product) {
+        Set<ConstraintViolation<Product>> violations = validator.validate(product);
+        if (!violations.isEmpty()) {
+            StringBuilder sb = new StringBuilder();
+            for (ConstraintViolation<Product> violation : violations) {
+                sb.append(violation.getPropertyPath()).append(": ").append(violation.getMessage()).append("; ");
+            }
+            throw new IllegalArgumentException("Product validation failed: " + sb.toString());
+        }
         BigDecimal rate = getUsdRate();
         product.setPriceUsd(product.getPriceEur().multiply(rate));
         logger.info("Creating product: {}", product.toString());
