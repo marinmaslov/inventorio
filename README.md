@@ -38,7 +38,8 @@ mvn spring-boot:run
 #### 1.1. Register a new user
 `POST /auth/register`  
 
-Form params: `username`, `password`  
+Form params: `username`, `password` 
+
 Response: Success or error message
 
 ##### Curl Example
@@ -51,7 +52,8 @@ curl -X POST http://localhost:8089/auth/register \
 #### 1.2. Login with a user
 `POST /auth/login`  
 
-Form params: `username`, `password`  
+Form params: `username`, `password`
+
 Response: JWT token or error message
 
 ##### Curl Example
@@ -82,6 +84,7 @@ After you logged in, you will receive a JWT token in the response, e.g.:
 
 #### 2.1. List Products
 `GET /api/products`
+
 Headers: `Authorization: Bearer <JWT_TOKEN>`
 
 ```sh
@@ -92,6 +95,7 @@ curl -X GET http://localhost:8089/api/products \
 
 #### 2.2. Get Product by ID
 `GET /api/products/{id}`
+
 Headers: `Authorization: Bearer <JWT_TOKEN>`
 
 ```sh
@@ -102,7 +106,9 @@ curl -X GET http://localhost:8089/api/products/1 \
 
 #### 2.3. Create Product
 `POST /api/products`
+
 Headers: `Authorization: Bearer <JWT_TOKEN>`
+
 Body: `JSON` product object
 
 ```sh
@@ -114,7 +120,9 @@ curl -X POST http://localhost:8089/api/products \
 
 #### 2.4. Delete Product (Admin Only)
 `DELETE /api/products/{id}`
+
 Headers: `Authorization: Bearer <JWT_TOKEN>`
+
 Requires `ADMIN` role
 
 ```sh
