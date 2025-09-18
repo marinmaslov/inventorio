@@ -15,6 +15,7 @@ public class Product {
 
     @Column(unique = true, length = 10, nullable = false)
     @Size(min = 10, max = 10)
+    @Pattern(regexp = "^[A-Za-z0-9]{10}$", message = "Code must be 10 alphanumeric characters")
     private String code;
 
     @NotBlank

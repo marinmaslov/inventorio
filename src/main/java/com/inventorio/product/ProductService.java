@@ -1,11 +1,14 @@
 package com.inventorio.product;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -15,6 +18,7 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
+    private static final Logger logger = LogManager.getLogger(ProductService.class);
     private final ProductRepository repo;
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -23,29 +27,20 @@ public class ProductService {
     }
 
     public Product create(Product product) {
-        try {
-            BigDecimal fxRate = getUsdRate();
-            product.setPriceUsd(product.getPriceEur().multiply(fxRate));
-            return repo.save(product);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to create product: " + e.getMessage(), e);
-        }
+        BigDecimal rate = getUsdRate();
+        product.setPriceUsd(product.getPriceEur().multiply(rate));
+        logger.info("Creating product: {}", product.toString());
+        return repo.save(product);
     }
 
     public Optional<Product> get(Long id) {
-        try {
-            return repo.findById(id);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to fetch product: " + e.getMessage(), e);
-        }
+        logger.info("Fetching product with id: {}", id);
+        return repo.findById(id);
     }
 
     public List<Product> list() {
-        try {
-            return repo.findAll();
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to list products: " + e.getMessage(), e);
-        }
+        logger.info("Fetching list of all products");
+        return repo.findAll();
     }
 
     private BigDecimal getUsdRate() {
