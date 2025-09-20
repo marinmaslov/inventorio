@@ -50,7 +50,7 @@ class ProductControllerIntegrationTests {
             "code": "ZZZ999YYYY",
             "name": "DeleteMe",
             "priceEur": 5.00,
-            "isAvailable": true
+            "available": true
         }
         """;
 

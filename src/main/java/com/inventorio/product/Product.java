@@ -27,5 +27,5 @@ public class Product {
     @DecimalMin("0.0")
     private BigDecimal priceUsd;
 
-    private boolean isAvailable;
+    private boolean available;
 }

@@ -147,7 +147,7 @@ curl -X GET http://localhost:8089/api/products \
 Headers: `Authorization: Bearer <JWT_TOKEN>`
 
 ```sh
-curl -X GET http://localhost:8089/api/products/1 \
+curl -X GET http://localhost:8089/api/products/{id} \
   -H "Authorization: Bearer <JWT_TOKEN>" \
   -H "Content-Type: application/json"
 ```
@@ -163,7 +163,7 @@ Body: `JSON` product object
 curl -X POST http://localhost:8089/api/products \
   -H "Authorization: Bearer <JWT_TOKEN>" \
   -H "Content-Type: application/json" \
-  -d '{"code":"ABC123DEFG","name":"Test Product","priceEur":10.00,"isAvailable":true}'
+  -d '{"code":"ABC123DEFG","name":"Test Product","priceEur":10.00,"available":true}'
 ```
 
 #### 2.4. Delete Product (Admin Only)
@@ -174,7 +174,7 @@ Headers: `Authorization: Bearer <JWT_TOKEN>`
 Requires `ADMIN` role
 
 ```sh
-curl -X DELETE http://localhost:8089/api/products/1 \
+curl -X DELETE http://localhost:8089/api/products/{id} \
   -H "Authorization: Bearer <ADMIN_JWT_TOKEN>" \
   -H "Content-Type: application/json"
 ```
