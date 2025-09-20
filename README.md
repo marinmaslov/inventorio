@@ -10,6 +10,9 @@ A Spring Boot REST API for user authentication and product management.
 - Maven
 - PostgreSQL
 
+### Limits
+- HikariCP connection pool is limited to 2 connections for free-tier PostgreSQL databases (Aiven)
+
 ### Configuration
 
 ## Way 1
@@ -112,7 +115,7 @@ curl -X POST http://localhost:8089/auth/login \
 After you logged in, you will receive a JWT token in the response, e.g.:
 
 ```
-{eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTY5NDc2ODAwMCwiZXhwIjoxNjk0ODUzNDAwfQ.4QwQv1K7QvQwQv1K7QvQwQv1K7QvQwQv1K7QvQwQv1K7Q}
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTY5NDc2ODAwMCwiZXhwIjoxNjk0ODUzNDAwfQ.4QwQv1K7QvQwQv1K7QvQwQv1K7QvQwQv1K7QvQwQv1K7Q
 ```
 
 **Use the token in requests:**

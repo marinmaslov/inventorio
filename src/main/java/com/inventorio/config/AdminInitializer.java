@@ -24,7 +24,7 @@ public class AdminInitializer {
                 User admin = new User();
                 admin.setUsername(adminUsername);
                 admin.setPassword(passwordEncoder.encode(adminPassword)); // hashed
-                admin.setRole("ROLE_ADMIN");
+                admin.setRole("ADMIN");
                 userRepository.save(admin);
             }
         };

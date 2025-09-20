@@ -4,11 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com</groupId>
 	<artifactId>inventorio</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 	<name>inventorio</name>
 	<description>Inventorio</description>
 
 	<properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
         <postgresql.version>42.7.7</postgresql.version>
         <spring.boot.version>3.5.5</spring.boot.version>
